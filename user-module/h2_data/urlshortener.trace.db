@@ -1,0 +1,206 @@
+2025-09-03 11:20:26.273953+05:30 database: wrong user or password; user: "SASDFSDF"
+org.h2.message.DbException: Wrong user name or password [28000-232]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:344)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:291)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:811)
+	at org.h2.server.web.WebApp.test(WebApp.java:977)
+	at org.h2.server.web.WebApp.process(WebApp.java:241)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1447)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 50 more
+2025-09-03 11:23:33.534526+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000a    create table [*]user (\000a        email varchar(255) not null,\000a        password varchar(255),\000a        username varchar(255),\000a        primary key (email)\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        email varchar(255) not null,
+        password varchar(255),
+        username varchar(255),
+        primary key (email)
+    ) [42001-232]
+2025-09-03 11:24:13.553750+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000a    create table [*]user (\000a        email varchar(255) not null,\000a        password varchar(255),\000a        username varchar(255),\000a        primary key (email)\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        email varchar(255) not null,
+        password varchar(255),
+        username varchar(255),
+        primary key (email)
+    ) [42001-232]
+2025-09-03 11:24:16.188303+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000a    create table [*]user (\000a        email varchar(255) not null,\000a        password varchar(255),\000a        username varchar(255),\000a        primary key (email)\000a    )"; expected "identifier"; SQL statement:
+
+    create table user (
+        email varchar(255) not null,
+        password varchar(255),
+        username varchar(255),
+        primary key (email)
+    ) [42001-232]
+2025-09-03 11:39:10.049696+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:39:12.701775+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:39:14.322048+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:39:17.958068+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:39:19.633569+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:39:40.386541+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:39:42.018479+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:39:44.735782+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:39:46.351777+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:39:47.962149+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:40:40.028248+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:43:59.186553+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:44:00.823876+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:44:02.458563+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:44:05.143925+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:44:07.775864+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:44:09.384689+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:44:11.057820+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:44:56.001326+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:45:10.709998+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:45:22.446621+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:45:25.064315+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:45:26.682039+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:45:29.364413+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:45:30.978494+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:45:56.781875+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:46:04.479610+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:46:06.154729+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:46:32.957304+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:46:40.676821+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:46:45.328553+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:46:48.944908+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:46:50.599032+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:46:52.238199+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:47:02.919674+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:47:05.598535+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:47:10.246585+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:47:24.959318+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:51:52.659277+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:51:56.408441+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]
+2025-09-03 11:52:31.326250+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "PASSWORD CHARACTER VARYING(5)": "'admin123' (8)"; SQL statement:
+INSERT INTO "PUBLIC"."CUSTOMERS_COPY_3_0"("EMAIL", "PASSWORD", "USERNAME") OVERRIDING SYSTEM VALUE SELECT "EMAIL", "PASSWORD", "USERNAME" FROM "PUBLIC"."CUSTOMERS" [22001-232]

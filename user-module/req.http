@@ -1,0 +1,49 @@
+GET https://jsonplaceholder.typicode.com/users
+###
+POST https://jsonplaceholder.typicode.com/users
+content-type: application/json 
+
+{
+    "name": "John Doe",
+    "username": "johndoe",
+    "email": ""
+}
+
+###
+
+POST http://localhost:8080/api/users/login
+content-type: application/json 
+
+{
+    "email": "admin2@gmail.com",
+    "password": "admin123"
+}
+###
+
+POST http://localhost:8080/api/users/login
+content-type: application/json 
+
+{
+    "email": "admin@gmail.com",
+    "password": "admin123"
+}
+###
+
+POST http://localhost:8080/api/users/register
+content-type: application/json 
+
+{
+    "username": "admin",
+    "password": "admin123",
+    "email": "admin@gmail.com"
+}
+###
+
+POST http://localhost:8080/api/users/register
+content-type: application/json 
+
+{
+    "username": "aman",
+    "password": "aman",
+    "email": "aman@gmail.com"
+}
