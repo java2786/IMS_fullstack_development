@@ -3,6 +3,7 @@ package com.demo.controllers;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,15 +14,34 @@ import com.demo.repositories.UserRepository;
 
 import jakarta.validation.Valid;
 
+
+class ResponseMessage{
+    String message;
+
+    public ResponseMessage(String message) {
+        this.message = message;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+}
+
+
 @RestController
 @RequestMapping("/api/users")
+@CrossOrigin
 public class UserController {
 
     @Autowired
     UserRepository userRepository;
     
     @PostMapping("/login")
-    public String loginUser(@RequestBody User user){
+    public ResponseMessage loginUser(@RequestBody User user){
         System.out.println(user);
 
         Optional<User> optional = userRepository.findById(user.getEmail());
@@ -29,13 +49,13 @@ public class UserController {
         if(optional.isPresent()){
             User dbUser = optional.get();
             if(user.getPassword().equals(dbUser.getPassword())){
-                return "User logged in successfully!";
+                return new ResponseMessage("User logged in successfully!");
             } else {
-                return "Invalid credentials!";
+                return new ResponseMessage("Invalid credentials!");
             }
         }
 
-        return "Email not found!";
+        return new ResponseMessage("Email not found!");
     }
 
     @PostMapping("/register")
