@@ -580,3 +580,34 @@ Caused by: java.io.IOException: Inappropriate ioctl for device
 	at java.base/sun.nio.ch.FileChannelImpl.force(FileChannelImpl.java:661)
 	at org.h2.mvstore.SingleFileStore.sync(SingleFileStore.java:179)
 	... 12 more
+2025-09-09 11:21:43.864015+05:30 database: close
+org.h2.message.DbException: IO Exception: "Closing" [90028-232]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.close(Store.java:374)
+	at org.h2.engine.Database.closeOpenFilesAndUnlock(Database.java:1292)
+	at org.h2.engine.Database.closeImpl(Database.java:1254)
+	at org.h2.engine.Database.close(Database.java:1173)
+	at org.h2.engine.Database.onShutdown(Database.java:1158)
+	at org.h2.engine.OnExitDatabaseCloser.onShutdown(OnExitDatabaseCloser.java:85)
+	at org.h2.engine.OnExitDatabaseCloser.run(OnExitDatabaseCloser.java:114)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: IO Exception: "Closing" [90028-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 8 more
+Caused by: org.h2.mvstore.MVStoreException: Could not sync file /Volumes/My Shared Files/shared/thispc_host/IMS_fullstack/url-shortener-backend/h2_data/urlshortener.mv.db [2.3.232/2]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.sync(SingleFileStore.java:181)
+	at org.h2.mvstore.RandomAccessStore.compactStore(RandomAccessStore.java:442)
+	at org.h2.mvstore.FileStore.compactStore(FileStore.java:890)
+	at org.h2.mvstore.FileStore.stop(FileStore.java:275)
+	at org.h2.mvstore.MVStore.closeStore(MVStore.java:693)
+	at org.h2.mvstore.MVStore.close(MVStore.java:643)
+	at org.h2.mvstore.db.Store.close(Store.java:364)
+	... 6 more
+Caused by: java.io.IOException: Inappropriate ioctl for device
+	at java.base/sun.nio.ch.FileDispatcherImpl.force0(Native Method)
+	at java.base/sun.nio.ch.FileDispatcherImpl.force(FileDispatcherImpl.java:37)
+	at java.base/sun.nio.ch.FileChannelImpl.implForce(FileChannelImpl.java:646)
+	at java.base/sun.nio.ch.FileChannelImpl.force(FileChannelImpl.java:661)
+	at org.h2.mvstore.SingleFileStore.sync(SingleFileStore.java:179)
+	... 12 more

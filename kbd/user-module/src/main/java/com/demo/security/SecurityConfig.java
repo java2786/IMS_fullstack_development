@@ -38,12 +38,10 @@ public class SecurityConfig {
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/auth/login", "/api/auth/register", "/employees/**").permitAll()
+                .requestMatchers("/api/auth/login", "/api/auth/register").permitAll()
                 .requestMatchers("/h2-console/**").permitAll() // For H2 database console
                 .requestMatchers("/api/shorten").hasAuthority("ROLE_USER")
-                .requestMatchers("/greet").hasAuthority("ROLE_USER")
                 .requestMatchers("/api/admin/**").hasAuthority("ROLE_ADMIN")
-                // http://localhost:8080/greet
                 .anyRequest().authenticated()
             )
             .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

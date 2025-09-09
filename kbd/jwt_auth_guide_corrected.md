@@ -790,3 +790,4 @@ class BookingResponse {
     // getters and setters
 }
 ```
+

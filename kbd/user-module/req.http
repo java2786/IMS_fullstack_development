@@ -1,0 +1,29 @@
+# Admin - eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwidXNlcklkIjoyLCJpYXQiOjE3NTcyNTUzMTUsImV4cCI6MTc1NzM0MTcxNX0.qhFtPJ0TjrLNC9drEFbV47ievcV__nK8Sn7PJbdLxv49RDoK5Kzb2zsVVSszs4AnS_-NCPwrhaexu6sknwXvbw
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin123"
+}
+
+###
+
+# User - eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXJlc2giLCJyb2xlcyI6WyJST0xFX1VTRVIiXSwidXNlcklkIjoxLCJpYXQiOjE3NTcyNTUyODAsImV4cCI6MTc1NzM0MTY4MH0.XEiGVAi_lLE8gIZmhNC0i3OfgjHg7t0nw07ra_MH-m4P5ECpagaX1WEjHeH4NSHK801UCU4JnXG-9Fe6XPhOYg
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "suresh",
+    "password": "password123"
+}
+
+###
+
+POST http://localhost:8080/api/shorten
+Authorization: Bearer YOUR_JWT_TOKEN
+Content-Type: application/json
+
+{
+    "originalUrl": "https://flipkart.com"
+}
